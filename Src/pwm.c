@@ -23,6 +23,11 @@ void main () {
 						since we want the clock to reset after 400count(400Hz),
 						so after each 2500 cycles the timer will reset
 						>> 0 - 2499 gives you 2500 total steps(1MHz/2500 = 400Hz)
-						>> 1,000,000 ticks/sec divided by 2500 steps = exactly 400Hz PWM cycle rate*/
+						>> 1,000,000 ticks/sec divided by 2500 steps = exactly 400Hz PWM cycle rate
+						CCR=Capture/Compare Register
+						*/
 
+	//CCMR=Capture/Compare Mode Register
+	//OCxM=Output Compare Mode
+	//TIM2_CH1
 }
