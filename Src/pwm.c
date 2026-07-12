@@ -29,5 +29,6 @@ void main () {
 
 	//CCMR=Capture/Compare Mode Register
 	//OCxM=Output Compare Mode
+	//ICxM=Input Capture Mode
 	//TIM2_CH1
 }
