@@ -27,8 +27,10 @@ void main () {
 						CCR=Capture/Compare Register
 						*/
 
-	//CCMR=Capture/Compare Mode Register
+	//CCMR=Capture/Compare Mode Register | Input Capture & Output Compare
 	//OCxM=Output Compare Mode
-	//ICxM=Input Capture Mode
-	//TIM2_CH1
+	//TIMx Capture/Compare Mode Register 1 controls Channel 1 & 2
+	//TIMx Capture/Compare Mode Register 2 controls Channel 3 & 4
+
+	TIM2->CCMR1 &= ~(0x);//unfinished, need more clearance
 }
