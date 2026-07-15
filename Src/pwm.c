@@ -32,5 +32,12 @@ void main () {
 	//TIMx Capture/Compare Mode Register 1 controls Channel 1 & 2
 	//TIMx Capture/Compare Mode Register 2 controls Channel 3 & 4
 
-	TIM2->CCMR1 &= ~(0x);//unfinished, need more clearance
+	//Resetting output compare, OC1M & OC2M in one shot
+	TIM2->CCMR1 &= ~((0x7<<12)|(0x7<<4));//0x7=111, and | means combining into 1 clean pattern before applying to register
+	//Configuring channel 1 & 2 to PWM mode 1 with bin 110
+	TIM2->CCMR1 |= ((0x6<<12)|(0x6<<4));
+
+	//same configuration for channel 3 & 4
+	TIM2->CCMR2 &= ~((0x7<<12)|(0x7<<4));
+	TIM2->CCMR2 |= ((0x6<<12)|(0x6<<4));
 }
