@@ -40,4 +40,7 @@ void main () {
 	//same configuration for channel 3 & 4
 	TIM2->CCMR2 &= ~((0x7<<12)|(0x7<<4));
 	TIM2->CCMR2 |= ((0x6<<12)|(0x6<<4));
+
+	//Enabling Capture Compare Register for channel 1, 2, 3, 4
+	TIM2->CCER |= ((1<<12)|(1<<8)|(1<<4)|(1<<0));
 }
