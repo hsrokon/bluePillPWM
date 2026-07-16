@@ -41,6 +41,18 @@ void main () {
 	TIM2->CCMR2 &= ~((0x7<<12)|(0x7<<4));
 	TIM2->CCMR2 |= ((0x6<<12)|(0x6<<4));
 
-	//Enabling Capture Compare Register for channel 1, 2, 3, 4
+	//Enabling Capture Compare Register for channel 1, 2, 3, 4 as output
 	TIM2->CCER |= ((1<<12)|(1<<8)|(1<<4)|(1<<0));
+
+	//Setting duty cycle
+	//Setting initial safety speed 0
+	TIM2->CCR1 = 0;
+	TIM2->CCR2 = 0;
+	TIM2->CCR3 = 0;
+	TIM2->CCR4 = 0;
+
+//	TIM2->CCR1 = 0;
+//	TIM2->CCR2 = 624;
+//	TIM2->CCR3 = 1249;
+//	TIM2->CCR4 = 2499;
 }
