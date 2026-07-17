@@ -51,12 +51,13 @@ void main () {
 	TIM2->CCR3 = 0;
 	TIM2->CCR4 = 0;
 
-//	TIM2->CCR1 = 0;
-//	TIM2->CCR2 = 624;
-//	TIM2->CCR3 = 1249;
-//	TIM2->CCR4 = 2499;
-
 	//Enabling counter through Timer control register
 	TIM2->CR1 |= (1<<0);//After this, timer will start counting, before timer was off
 
+	while(1){
+		TIM2->CCR1 = 0;
+		TIM2->CCR2 = 624;
+		TIM2->CCR3 = 1249;
+		TIM2->CCR4 = 2499;
+	};
 }
