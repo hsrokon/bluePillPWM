@@ -253,7 +253,7 @@ int main (void) {
  8000294:	6413      	str	r3, [r2, #64]	@ 0x40
 
 		//For every 1 while loop cycle, forcing it to delay for another 20000 loop cycles, for the bare eye to see the transition
-		for (volatile int i=0; i<20000; i++);
+		for (volatile int i=0; i<3000; i++);
  8000296:	2300      	movs	r3, #0
  8000298:	607b      	str	r3, [r7, #4]
  800029a:	e002      	b.n	80002a2 <main+0x132>
@@ -261,7 +261,7 @@ int main (void) {
  800029e:	3301      	adds	r3, #1
  80002a0:	607b      	str	r3, [r7, #4]
  80002a2:	687b      	ldr	r3, [r7, #4]
- 80002a4:	f644 621f 	movw	r2, #19999	@ 0x4e1f
+ 80002a4:	f640 32b7 	movw	r2, #2999	@ 0xbb7
  80002a8:	4293      	cmp	r3, r2
  80002aa:	ddf7      	ble.n	800029c <main+0x12c>
 		speed+=steps;//every loop cycle, adding speed by steps value

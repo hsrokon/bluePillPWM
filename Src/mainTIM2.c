@@ -73,7 +73,7 @@ int main (void) {
 		TIM2->CCR4 = speed;
 
 		//For every 1 while loop cycle, forcing it to delay for another 20000 loop cycles, for the bare eye to see the transition
-		for (volatile int i=0; i<3000; i++);
+		for (volatile int i=0; i<5000; i++);
 
 //		TIM2->CCR1 = 0;
 //		TIM2->CCR2 = 624;
