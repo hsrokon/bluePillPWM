@@ -54,10 +54,30 @@ void main () {
 	//Enabling counter through Timer control register
 	TIM2->CR1 |= (1<<0);//After this, timer will start counting, before timer was off
 
+	//Making an LED brightness simulation with PWM signals we are getting as output by increasing duty cycles
+
+	int speed = 0;
+	int steps = 5;
+
 	while(1){
-		TIM2->CCR1 = 0;
-		TIM2->CCR2 = 624;
-		TIM2->CCR3 = 1249;
-		TIM2->CCR4 = 2499;
+
+		speed+=steps;//every loop cycle, adding speed by steps value
+
+		if(speed>=2499 || speed<=0){
+			steps= -steps;//increasing from 0-2499 then decreasing to 2499-0 indefinitely
+		}
+
+		TIM2->CCR1 = speed;
+		TIM2->CCR2 = speed;
+		TIM2->CCR3 = speed;
+		TIM2->CCR4 = speed;
+
+		//For every 1 while loop cycle, forcing it to delay for another 20000 loop cycles, for the bare eye to see the transition
+		for (volatile int i=0; i<20000; i++);
+
+//		TIM2->CCR1 = 0;
+//		TIM2->CCR2 = 624;
+//		TIM2->CCR3 = 1249;
+//		TIM2->CCR4 = 2499;
 	};
 }
